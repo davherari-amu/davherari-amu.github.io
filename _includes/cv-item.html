@@ -1,0 +1,41 @@
+<div class="cv-item">
+
+    <!-- Title -->
+    <div class="cv-title">
+        <strong>{{ post.title }}</strong>
+    </div>
+
+    <!-- Place -->
+    <div class="cv-place">
+        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+        {{ post.host }}, {{post.location}}
+    </div>
+
+    <!-- Date -->
+    <div class="cv-date">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        {% if post.date %}
+            {{ post.date | date: "%B %Y" }}
+        {% elsif post.date-start %}
+            {{ post.date-start | date: "%B %Y" }}
+            -
+            {% if post.date-end %}
+                {{ post.date-end | date: "%B %Y" }}
+            {% else %}
+                present
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <!-- Details -->
+    {% if post.details %}
+      <details class="cv-details">
+        <summary><strong>More details</strong></summary>
+        <ul>
+          {% for item in post.details %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </details>
+    {% endif %}
+</div>
