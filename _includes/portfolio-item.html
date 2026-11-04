@@ -3,9 +3,13 @@
   {% assign pub_post = site.publications | where: "path", post.publication | first%}
   <div class="portfolio-title">
       <strong>
+      {% if pub_post.doi and pub_post.status == "published" %}
       <a href="https://doi.org/{{ pub_post.doi }}" target="_blank">
         <strong>{{ post.title }}</strong>
       </a>
+      {% else %}
+        {{ post.title }}
+      {% endif %}
       </strong>
   </div>
 

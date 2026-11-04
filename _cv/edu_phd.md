@@ -1,8 +1,9 @@
 ---
-title: "Ph.D. in Sciences of Human Movement"
+title: "PhD – Human Movement Sciences"
 collection: cv
 type: "education"
 date: 2024-11-29
 location: "Aix-en-Provence, France"
-host: "Université d'Aix-Marseille"
+host: "Aix-Marseille University"
+thesis: "Bio-inspired generative design: adaptation principles of bone-joint formation to design contact interfaces."
 ---

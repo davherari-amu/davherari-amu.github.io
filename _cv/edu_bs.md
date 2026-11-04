@@ -1,5 +1,5 @@
 ---
-title: "B.S. in Mechanical Engineering"
+title: "Bachelor's – Mechanical Engineering"
 collection: cv
 type: "education"
 date: 2019-07-31

@@ -5,20 +5,29 @@
     <strong>{{ post.title }}</strong>
   </div>
 
-  <!-- Date & position -->
+  <!-- Date, position & hours -->
   <div class="teaching-meta">
     <i class="fa fa-calendar" aria-hidden="true"></i>
-    {{ post.date-start | date: "%B %Y" }}
-    -
-    {{ post.date-end | date: "%B %Y" }}
-    |
-    {{ post.position }}
+    {% if post.term %}
+      {{ post.term }}
+    {% else %}
+      {{ post.date-start | date: "%B %Y" }}
+      –
+      {{ post.date-end | date: "%B %Y" }}
+    {% endif %}
+    {% if post.position %}
+      | {{ post.position }}
+    {% endif %}
+    {% if post.hours %}
+      | {{ post.hours }} h
+    {% endif %}
   </div>
 
-  <!-- Department -->
+  <!-- Level & department -->
+  {% if post.level or post.department %}
   <div class="teaching-meta">
     <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-    {{ post.department}}
+    {% if post.level %}{{ post.level }}{% if post.department %}, {% endif %}{% endif %}{{ post.department }}
   </div>
+  {% endif %}
 </div>
-

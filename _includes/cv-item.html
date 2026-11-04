@@ -6,19 +6,27 @@
     </div>
 
     <!-- Place -->
+    {% if post.host %}
     <div class="cv-place">
-        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-        {{ post.host }}, {{post.location}}
+        {% if post.type == "experience" %}
+            <i class="fa fa-building-columns" aria-hidden="true"></i>
+        {% else %}
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+        {% endif %}
+        {{ post.host }}{% if post.location %}, {{ post.location }}{% endif %}
     </div>
+    {% endif %}
 
     <!-- Date -->
     <div class="cv-date">
         <i class="fa fa-calendar" aria-hidden="true"></i>
-        {% if post.date %}
+        {% if post.date and post.year_only %}
+            {{ post.date | date: "%Y" }}
+        {% elsif post.date %}
             {{ post.date | date: "%B %Y" }}
         {% elsif post.date-start %}
             {{ post.date-start | date: "%B %Y" }}
-            -
+            –
             {% if post.date-end %}
                 {{ post.date-end | date: "%B %Y" }}
             {% else %}
@@ -27,15 +35,19 @@
         {% endif %}
     </div>
 
+    <!-- Thesis -->
+    {% if post.thesis %}
+    <div class="cv-thesis">
+        Thesis: <em>{{ post.thesis }}</em>
+    </div>
+    {% endif %}
+
     <!-- Details -->
     {% if post.details %}
-      <details class="cv-details">
-        <summary><strong>More details</strong></summary>
-        <ul>
-          {% for item in post.details %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </details>
+      <ul class="cv-details">
+        {% for item in post.details %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
     {% endif %}
 </div>

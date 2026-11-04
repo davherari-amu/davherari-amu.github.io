@@ -2,11 +2,12 @@
 title: "Bio-inspired generative design of contact interfaces subjected to time-dependent loading conditions"
 collection: publications
 category: manuscripts
-date: 2025-02-13
+date: 2025-03-01
 venue: 'Results in Engineering'
 status: "published"
 type: 'journal'
 doi: "10.1016/j.rineng.2025.104340"
+code: "https://github.com/sarroyavet/BioDesign_ANR/tree/main/GenerativeDesign"
 authors:
     - David Hernandez-Aristizabal
     - Santiago Arroyave-Tobón

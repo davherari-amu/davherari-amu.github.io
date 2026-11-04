@@ -2,7 +2,7 @@
 title: "A bulk-surface mechanobiochemical modelling approach for single cell migration in two-space dimensions"
 collection: publications
 category: manuscripts
-date: 2025-02-13
+date: 2024-12-01
 venue: 'Journal of Theoretical Biology'
 status: "published"
 type: 'journal'

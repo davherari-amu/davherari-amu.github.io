@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-GB"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Home"
+title                    : "David Hernández-Aristizábal"
 title_separator          : "-"
-name                     : &name "David Hernández Aristizábal"
-description              : &description "Researcher in computational mechanics and mechanobiology"   # Update this with a general description of your site, this is the default if not overridden by a page
+name                     : &name "David Hernández-Aristizábal"
+description              : &description "Computational scientist in Nice, France: finite element and multiphysics simulation, mechanobiology and design of experiments. Postdoctoral researcher at Université Côte d'Azur."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://davherari-amu.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -24,13 +24,13 @@ repository               : "davherari-amu/davherari-amu.github.io"
 author:
   # Biographic information
   avatar           : "photo.jpeg"
-  name             : "David Hernández Aristizábal"
+  name             : "David Hernández-Aristizábal"
   pronouns         : # example: "she/her"
-  bio              : "Researcher in computational mechanics and mechanobiology"
+  bio              : "Computational Scientist · Mechanics & Biology"
   location         : "Nice, France"
   employer         : "Université Côte d'Azur"
-  uri              : "https://www.webofscience.com/wos/author/record/AAC-1931-2022"
-  email            : "david.hernandez-aristizabal@univ-cotedazur.fr"
+  uri              : # URL shown as "Website" in the sidebar
+  email            : "dhabvmo@gmail.com"
 
   # Academic websites
   academia         : # URL
@@ -39,6 +39,7 @@ author:
   inspire-hep      : # URL
   impactstory      : # URL
   orcid            : "https://orcid.org/0000-0003-4041-3785"
+  webofscience     : "https://www.webofscience.com/wos/author/record/AAC-1931-2022"
   semantic         : # URL
   ssrn             : # URL
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -123,12 +124,12 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true      # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
 
 # SEO Related
-google_site_verification : "googledbcf8fe3fab3c038"
+google_site_verification : # verified with googledbcf8fe3fab3c038.html instead
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
@@ -141,14 +142,24 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Social media default site image
+og_image                 : "photo.jpeg" # Social media default site image, in /images/
 og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
+  job_title              : "Computational Scientist"
+  alternate_names: # Spellings people may search for
+    - "David Hernandez-Aristizabal"
+    - "David Hernández Aristizábal"
+    - "David Hernandez Aristizabal"
   links: # An array of links to social media profiles
+    - "https://orcid.org/0000-0003-4041-3785"
+    - "https://scholar.google.com/citations?user=9sygLooAAAAJ"
+    - "https://github.com/davherari-amu"
+    - "https://www.linkedin.com/in/david-hernandez-aristizabal"
+    - "https://www.webofscience.com/wos/author/record/AAC-1931-2022"
 
 
 # Analytics
@@ -189,6 +200,16 @@ exclude:
   - package.json*
   - Rakefile
   - README
+  - README.md
+  - CONTRIBUTING.md
+  - docker-compose.yaml
+  - _config_docker.yml
+  - markdown_generator
+  - scripts
+  - talkmap
+  - talkmap.py
+  - talkmap.ipynb
+  - talkmap_out.ipynb
   - tmp
   - vendor
 keep_files:
@@ -219,21 +240,23 @@ kramdown:
 
 
 # These settings control the types of collections used by the template
+# Item pages are not published (output: false): the list pages link to the DOIs instead,
+# and empty item pages only dilute the site for search engines.
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
-    output: true
+    output: false
     permalink: /:collection/:path/
   portfolio:
-    output: true
+    output: false
     permalink: /:collection/:path/
   talks:
-    output: true
+    output: false
     permalink: /:collection/:path/
   cv:
-    output: true
+    output: false
     permalink: /:collection/:path/
 
 

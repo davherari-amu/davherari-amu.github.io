@@ -1,16 +1,45 @@
 ---
 layout: archive
+title: "CV"
 permalink: /cv/
 author_profile: true
 ---
 
 {% include base_path %}
 
+<p>
+  <a href="{{ base_path }}/files/David_Hernandez-Aristizabal_CV.pdf" class="btn btn--primary">
+    <i class="fa fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)
+  </a>
+</p>
+
+<!-- Experience -->
+<h2><i class="fa fa-briefcase"></i> Professional experience</h2>
+<hr class="hr-thick">
+{% assign experience = site.cv | where: "type", "experience" | sort: "order" | reverse %}
+{% for post in experience %}
+    {% include cv-item.html post=post %}
+    {% unless forloop.last %}
+        <hr class="hr-thin-gradient">
+    {% endunless %}
+{% endfor %}
+
 <!-- Education -->
 <h2><i class="fa fa-graduation-cap"></i> Education</h2>
 <hr class="hr-thick">
 {% assign education = site.cv | where: "type", "education" | sort: "date" | reverse %}
 {% for post in education %}
+    {% include cv-item.html post=post %}
+    {% unless forloop.last %}
+        <hr class="hr-thin-gradient">
+    {% endunless %}
+{% endfor %}
+
+<!-- Training -->
+<h2><i class="fa-solid fa-chalkboard-user"></i> Training</h2>
+<hr class="hr-thick">
+{% assign training = site.cv | where: "type", "training" | sort: "date" | reverse %}
+{% for post in training %}
     {% include cv-item.html post=post %}
     {% unless forloop.last %}
         <hr class="hr-thin-gradient">
@@ -24,144 +53,59 @@ author_profile: true
 <div class="skills-grid">
   <div class="skill-category">
     <h3>Programming</h3>
-    <span class="skill" data-level="4">
-      <i class="fa-brands fa-python"></i> Python
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="4">
-      <i class="fa-brands fa-tex"></i> LaTeX
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="4">
-      Vim
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="3">
-      <i class="fa-solid fa-laptop-code"></i> Bash
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="3">
-      <i class="fa-brands fa-linux"></i> Linux
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="3">
-      <i class="fa-brands fa-git"></i><i class="fa-brands fa-github"></i>
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="3">
-      Fortran 77/90
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="3">
-      MATLAB
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="2">
-      Parallelisation
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="1">
-      C++
-      <span class="level"></span>
-    </span>
+    <span class="skill-year"><i class="fa-brands fa-python"></i> Python<span class="level">5 years</span></span>
+    <span class="skill-year"><i class="fa-brands fa-git-alt"></i> Git / <i class="fa-brands fa-linux"></i> Linux<span class="level">5 years</span></span>
+    <span class="skill-year">Fortran<span class="level">3 years</span></span>
+    <span class="skill-year">Matlab<span class="level">3 years</span></span>
   </div>
 
   <div class="skill-category">
-    <h3>Research and development</h3>
-    <span class="skill"><i class="fa-solid fa-book-open"></i> Literature review</span>
-    <span class="skill"><i class="fa-solid fa-square-root-variable"></i> Mathematical modelling</span>
-    <span class="skill"><i class="fa-solid fa-dna"></i> Mechanobiology</span>
-    <span class="skill"><i class="fa-solid fa-computer"></i> Scientific computing</span>
-    <span class="skill"><i class="fa-solid fa-pencil"></i> Scientific writing</span>
+    <h3>Simulation software</h3>
+    <span class="skill-year">FEniCSx<span class="level">2 years</span></span>
+    <span class="skill-year">Code_Aster<span class="level">3 years</span></span>
+    <span class="skill-year">Abaqus (UEL)<span class="level">3 years</span></span>
+    <span class="skill-year">Gmsh<span class="level">5 years</span></span>
+    <span class="skill-year">ParaView<span class="level">2 years</span></span>
   </div>
 
   <div class="skill-category">
-    <h3>Numerical Methods</h3>
-    <span class="skill">Finite Element Method</span>
-    <span class="skill">Implicit and Explicit Schemes</span>
-    <span class="skill">Finite Difference Method</span>
+    <h3>Methods</h3>
+    <span class="skill">Design of experiments</span>
+    <span class="skill">Response-surface models</span>
+    <span class="skill">Nonlinear solvers</span>
+    <span class="skill">Moving-boundary problems</span>
+    <span class="skill">Parallel computing (MPI)</span>
   </div>
 
   <div class="skill-category">
-    <h3>Software</h3>
-    <span class="skill" data-level="4">
-      FEniCSx
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="4">
-      Code Aster
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="4">
-      ParaView
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="3">
-      Gmsh
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="3">
-      Inkscape
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="3">
-      Abaqus (UEL)
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="3">
-      Microsoft Office
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="2">
-      ANSYS
-      <span class="level"></span>
-    </span>
-    <span class="skill" data-level="2">
-      Autodesk Inventor
-      <span class="level"></span>
-    </span>
-
-  </div>
-
-  <div class="skill-category">
-    <h3>Professional</h3>
-    <span class="skill"><i class="fa-solid fa-person-digging"></i> Autonomous work</span>
-    <span class="skill"><i class="fa-solid fa-hourglass-half"></i> Deadline management</span>
-    <span class="skill"><i class="fa-solid fa-lightbulb"></i> Critical thinking</span>
-    <span class="skill"><i class="fa-solid fa-clipboard-check"></i> Learning from failure</span>
-    <span class="skill"><i class="fa-solid fa-users"></i> Teamwork</span>
+    <h3>Transferable skills</h3>
+    <span class="skill"><i class="fa-solid fa-diagram-project"></i> Project management</span>
+    <span class="skill"><i class="fa-solid fa-lightbulb"></i> Problem-solving</span>
+    <span class="skill"><i class="fa-solid fa-chart-line"></i> Data analysis</span>
+    <span class="skill"><i class="fa-solid fa-comments"></i> Communication</span>
+    <span class="skill"><i class="fa-solid fa-chalkboard-user"></i> Teaching</span>
+    <span class="skill"><i class="fa-solid fa-users"></i> Interdisciplinary teamwork</span>
   </div>
 
   <div class="skill-category">
     <h3>Languages</h3>
-    <span class="skill">Spanish (Native)</span>
-    <span class="skill">English (B2)</span>
-    <span class="skill">French (B2)</span>
+    <span class="skill">French (C1)</span>
+    <span class="skill">English (C1, IELTS 7.5)</span>
+    <span class="skill">Spanish (native)</span>
   </div>
 </div>
 
-<!-- Experience -->
-<h2><i class="fa fa-briefcase"></i> Experience</h2>
-<hr class="hr-thick">
-{% assign experience = site.cv | where: "type", "experience" | sort: "order" | reverse %}
-{% for post in experience %}
-    {% include cv-item.html post=post %}
-    {% unless forloop.last %}
-        <hr class="hr-thin-gradient">
-    {% endunless %}
-{% endfor %}
-
 <!-- Communications -->
-<h2><i class="fa-solid fa-comments"></i> Communications</h2>
+<h2><i class="fa-solid fa-comments"></i> Publications and talks</h2>
 <hr class="hr-thick">
 <ul>
-    <li><a href="/publications/">Publications</a></li>
-    <li><a href="/talks/">Talks</a></li>
-    <li><a href="/teaching/">Teaching</a></li>
+    <li>Seven peer-reviewed <a href="{{ base_path }}/publications/">publications</a>, six as first author.</li>
+    <li>Five oral <a href="{{ base_path }}/talks/">presentations</a> at conferences and seminars.</li>
+    <li>420+ hours of <a href="{{ base_path }}/teaching/">teaching</a>.</li>
 </ul>
 
 <!-- Personal Interests -->
-<h2>Personal Interests</h2>
+<h2>Personal interests</h2>
 <hr class="hr-thick">
 <div class="skills-grid">
   <span class="skill"><i class="fa-solid fa-scissors"></i> Crochet</span>

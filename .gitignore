@@ -24,3 +24,8 @@ package-lock.json
 
 # Vim session
 .session.vim
+
+# PLOS Comput Biol supplementary movies: keep them out of the public repo until
+# the article is published, then delete these lines and commit the videos
+videos/portfolio/her26b_Movie_S1.mp4
+videos/portfolio/her26b_Movie_S3.mp4

@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: ""
+seo_title: "David Hernández-Aristizábal – Computational Scientist, Mechanics & Biology"
 author_profile: true
 redirect_from: 
   - /about/
@@ -9,59 +10,68 @@ redirect_from:
 
 {% include base_path %}
 
-## Presentation
-My research activities lie at the interface of **mathematical modelling**,
-**mechanobiology**, and **numerical simulation**.
-In particular, I am interested in the modelling of biological systems
-as complex, dynamic entities whose behaviour and morphology are
-constantly evolving.
-This evolution is governed by biophysical interactions, including
-mechanical and biochemical processes, making biological systems both
-exciting and challenging subjects of study.
-The main goal of my research has thus been to develop biophysically
-grounded mathematical models capable of capturing the interplay between
-mechanics and biochemistry in **evolving geometries**, as well as
-**computational methods** to study the response and output of such models.
+## Profile
+I am a computational scientist with five years' experience in the
+mathematical modelling of biological and mechanical systems.
+I specialise in **finite element and multiphysics simulation**, from the
+mathematical model to validated open-source code, and in the
+**statistical design of simulation studies**.
+I have published seven peer-reviewed articles (six as first author), and
+I am used to working on interdisciplinary projects end to end and
+communicating complex results.
 
-## Research interests
-- Modelling of mechanical and biochemical processes using
- partial differential equations
-- Evolving geometries
-- Finite element methods
-- Bio-inspired design generation
+I am based in **Nice, France**, and I am looking for **industrial R&D
+roles** in numerical simulation, computational biology or scientific
+software.
 
-## Modelling philosophy
-One of the drawbacks of *in silico* models is the lack of
-**interpretability of results**.
-By definition, a model is a simplified description of the reality.
-In addition, biological measures needed to fit model parameters vary
-strongly from one case to another and in many situations are not
-available.
-In response, my research is not focused on reproducing specific
-experimental systems quantitatively, but rather it focuses on using
-**mathematical modelling** as a **computational comparative tool**.
-Thus, my work relies on the **systematic parameter exploration**,
-supported by the definition of **objective metrics**, to investigate
-linear and nonlinear relations.
+<p>
+  <a href="{{ base_path }}/files/David_Hernandez-Aristizabal_CV.pdf" class="btn btn--primary">Download my CV (PDF)</a>
+  <a href="mailto:{{ site.author.email }}" class="btn btn--info">Contact me</a>
+</p>
 
-## Current research
-I am currently a postdoctoral researcher at **Université Côte d’Azur**
-in the **Laboratoire Jean Alexandre Dieudonné** working under the
-supervision of **Rachele Allena** and **Frédéric Luton** and in
-collaboration with **Anotida Madzvamuse**.
+## What I do
+- **Finite element and multiphysics simulation**: nonlinear and
+  moving-boundary problems, custom elements and solvers (FEniCSx,
+  Code_Aster, Abaqus UEL, Gmsh).
+- **Mechanobiology**: models of cell migration and cancer invasion that
+  couple mechanics and biochemistry on evolving geometries.
+- **Bio-inspired design**: generative design of contact interfaces based
+  on the growth rules of synovial joints.
+- **Design of experiments**: response-surface metamodels that show which
+  parameters drive a simulated outcome.
+- **Scientific computing**: simulation campaigns on computing clusters
+  (Slurm, MPI), profiling and optimisation of Python code.
 
-My current research focuses on the interaction between
-**tumour cells** and the **basement membrane**, a thin yet stiff
-extracellular matrix that plays a central role in tissue organisation
-and cancer invasion.
-Modelling this interaction requires the coupling of mechanics and
-biochemistry within highly deformable and evolving domains.
-Using **geometric-surface partial differential equations**, I
-investigate how tumour cells breach the basement membrane using
-protease-independent mechanisms, particularly through filopodial
-activity.
+## Current work
+I am a postdoctoral researcher at **Université Côte d'Azur**, in the
+Laboratoire Jean Alexandre Dieudonné, working with Rachele Allena and
+Frédéric Luton, in collaboration with Anotida Madzvamuse and Francesca
+Ballatore.
 
-A list of publications is available on the
-[Publications](/publications/) page, and my academic CV can be found
-[here](/cv/).
+I study how **tumour cells** interact with the **basement membrane**, a
+thin yet stiff extracellular matrix that plays a central role in tissue
+organisation and cancer invasion, and how cells squeeze through
+**narrow constrictions**.
+Both problems couple mechanics and biochemistry within highly
+deformable, evolving domains, which I model with geometric surface
+partial differential equations solved in FEniCSx.
+This work has led to two first-author articles in 2026, in the
+*Journal of the Royal Society Interface* and *PLOS Computational
+Biology*, and to two articles in preparation.
+The code for the published work is open source:
+[FilopodiaToPores](https://github.com/davherari-amu/FilopodiaToPores)
+and
+[ConfinedCellMigration](https://github.com/davherari-amu/ConfinedCellMigration).
 
+## How I use models
+A model is a simplified description of reality, and the biological
+measurements needed to fit its parameters vary strongly from one case to
+another or are simply not available.
+So rather than reproducing one experiment quantitatively, I use
+**mathematical modelling as a comparative tool**: I explore the parameter
+space systematically and define **objective metrics** to identify which
+mechanisms drive the behaviour of the system.
+
+Simulation videos are on the [Portfolio](/portfolio/) page, articles on
+the [Publications](/publications/) page, and the full [CV](/cv/) is
+online and [in PDF]({{ base_path }}/files/David_Hernandez-Aristizabal_CV.pdf).

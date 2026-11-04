@@ -1,5 +1,6 @@
 ---
 layout: archive
+title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
@@ -9,7 +10,7 @@ author_profile: true
 <div>
   You can also find my articles on
   <a href="{{ site.author.googlescholar }}">Google Scholar</a>,
-  <a href="{{ site.author.uri }}">Web of Science</a>,
+  <a href="{{ site.author.webofscience }}">Web of Science</a>,
   and
   <a href="{{ site.author.orcid }}">ORCID</a>
 </div>
@@ -17,7 +18,7 @@ author_profile: true
 <!-- Journal articles -->
 <h2>Journal articles</h2>
 {% assign journal_articles = site.publications | where: "type", "journal" %}
-{% assign published_articles = journal_articles | where: "status", "published" | reverse %}
+{% assign published_articles = journal_articles | where_exp: "item", "item.status != 'under_review'" | reverse %}
 <hr class="hr-thick">
 {% for post in published_articles %}
   {% include publication-item.html post=post %}

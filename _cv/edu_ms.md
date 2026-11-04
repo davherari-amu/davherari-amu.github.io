@@ -1,8 +1,8 @@
 ---
-title: "M.S. in Mechanical Engineering"
+title: "Master's – Mechanical Engineering"
 collection: cv
 type: "education"
-date: 2021-07-31
+date: 2021-04-30
 location: "Bogotá, Colombia"
 host: "Universidad Nacional de Colombia"
 ---

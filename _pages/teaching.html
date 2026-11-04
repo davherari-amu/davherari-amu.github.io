@@ -1,5 +1,6 @@
 ---
 layout: archive
+title: "Teaching"
 permalink: /teaching/
 author_profile: true
 ---
@@ -12,7 +13,7 @@ author_profile: true
 
 <!-- Plot by institution -->
 {% for host in hosts %}
-  {% assign classes = site.teaching | where: "host", host | reverse %}
+  {% assign classes = all_teaching | where: "host", host %}
   <h2>{{ host }}</h2>
   <hr class="hr-thick">
   {% for post in classes %}

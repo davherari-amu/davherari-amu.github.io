@@ -7,6 +7,7 @@ venue: 'International Journal of Solids and Structures'
 status: "published"
 type: 'journal'
 doi: "10.1016/j.ijsolstr.2023.112238"
+code: "https://github.com/sarroyavet/BioDesign_ANR/tree/main/StressAdaptiveDesignOf2D"
 authors:
     - David Hernandez-Aristizabal
     - Santiago Arroyave-Tobón

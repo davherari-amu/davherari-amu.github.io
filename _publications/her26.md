@@ -2,11 +2,12 @@
 title: "Basement membrane turnover drives filopodial protease-independent invasion"
 collection: publications
 category: manuscripts
-date: 2026-01-01
-venue: 'Under review'
-status: "under_review"
+date: 2026-06-17
+venue: 'Journal of the Royal Society Interface'
+status: "published"
 type: 'journal'
-doi: "10.64898/2026.01.05.697631"
+doi: "10.1098/rsif.2025.1106"
+code: "https://github.com/davherari-amu/FilopodiaToPores"
 authors:
     - David Hernandez-Aristizabal
     - Anotida Madzvamuse
