@@ -25,7 +25,7 @@ roles** in numerical simulation, computational biology or scientific
 software.
 
 <p>
-  <a href="{{ base_path }}/files/David_Hernandez-Aristizabal_CV.pdf" class="btn btn--primary">Download my CV (PDF)</a>
+  <a href="{{ base_path }}/files/cv_david_HA.pdf" class="btn btn--primary">Download my CV (PDF)</a>
   <a href="mailto:{{ site.author.email }}" class="btn btn--info">Contact me</a>
 </p>
 
@@ -74,4 +74,4 @@ mechanisms drive the behaviour of the system.
 
 Simulation videos are on the [Portfolio](/portfolio/) page, articles on
 the [Publications](/publications/) page, and the full [CV](/cv/) is
-online and [in PDF]({{ base_path }}/files/David_Hernandez-Aristizabal_CV.pdf).
+online and [in PDF]({{ base_path }}/files/cv_david_HA.pdf).
