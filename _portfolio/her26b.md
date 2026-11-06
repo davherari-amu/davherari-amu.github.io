@@ -1,7 +1,6 @@
 ---
 title: "Membrane tension and cell–nucleus mechanical coupling regulate confined cell migration"
 collection: portfolio
-published: false # hidden until the PLOS article is published; delete this line to show it
 publication: "_publications/her26b.md"
 videos:
     - "/videos/portfolio/her26b_Movie_S1.mp4"
