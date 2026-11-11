@@ -1,0 +1,51 @@
+# Interface text for each language of the site (pages in _pages/fr are French).
+# Page content lives in the pages and collections; only labels and headings are here.
+
+en:
+  language_name: "English"
+  home: "Home"
+  follow: "Follow"
+  present: "present"
+  thesis: "Thesis:"
+  abstract: "Abstract"
+  code: "Code"
+  experience: "Professional experience"
+  education: "Education"
+  training: "Training"
+  journal_articles: "Journal articles"
+  under_review: "Under review"
+  conference_proceedings: "Conference proceedings"
+  presentations: "Presentations"
+  posters: "Posters"
+  sitemap: "Sitemap"
+  last_updated: "Site last updated"
+  powered_by: "Powered by"
+  fork_of: "a fork of"
+
+fr:
+  language_name: "Français"
+  home: "Accueil"
+  follow: "Suivre"
+  present: "aujourd’hui"
+  thesis: "Thèse :"
+  abstract: "Résumé"
+  code: "Code"
+  experience: "Expérience professionnelle"
+  education: "Formation"
+  training: "Formation complémentaire"
+  journal_articles: "Articles de revues"
+  under_review: "En cours d’évaluation"
+  conference_proceedings: "Actes de congrès"
+  presentations: "Communications orales"
+  posters: "Posters"
+  sitemap: "Plan du site"
+  last_updated: "Dernière mise à jour"
+  powered_by: "Propulsé par"
+  fork_of: "dérivé de"
+  months: [janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
+  # Country names as written in the English data, and their French form
+  places:
+    "United Kingdom": "Royaume-Uni"
+    "Italy": "Italie"
+    "Austria": "Autriche"
+    "Colombia": "Colombie"

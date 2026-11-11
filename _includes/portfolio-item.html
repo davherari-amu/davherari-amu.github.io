@@ -35,7 +35,9 @@
   {% endif %}
 
   <!-- Description -->
-  {% if post.description %}
+  {% if page.lang == "fr" and post.description_fr %}
+    {{ post.description_fr }}
+  {% elsif post.description %}
     {{ post.description }}
   {% endif %}
 </div>

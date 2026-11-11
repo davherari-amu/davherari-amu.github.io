@@ -5,4 +5,5 @@ type: "education"
 date: 2019-07-31
 location: "Bogotá, Colombia"
 host: "Universidad Nacional de Colombia"
+title_fr: "Ingénieur mécanique (diplôme colombien, 5 ans)"
 ---

@@ -1,0 +1,1 @@
+{% comment %}Prints include.text, with country names in French on French pages ("Graz, Austria" -> "Graz, Autriche").{% endcomment %}{% assign place = include.text %}{% if page.lang == "fr" %}{% for country in site.data.i18n.fr.places %}{% assign place = place | replace: country[0], country[1] %}{% endfor %}{% endif %}{{ place }}

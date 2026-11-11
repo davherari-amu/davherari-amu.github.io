@@ -13,6 +13,7 @@ title                    : "David Hernández-Aristizábal"
 title_separator          : "-"
 name                     : &name "David Hernández-Aristizábal"
 description              : &description "Computational scientist in Nice, France: finite element and multiphysics simulation, mechanobiology and design of experiments. Postdoctoral researcher at Université Côte d'Azur."   # Update this with a general description of your site, this is the default if not overridden by a page
+description_fr           : "Docteur en simulation numérique à Nice : éléments finis et multiphysique, mécanobiologie, plans d'expériences. Post-doctorant à l'Université Côte d'Azur."
 url                      : https://davherari-amu.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -27,6 +28,7 @@ author:
   name             : "David Hernández-Aristizábal"
   pronouns         : # example: "she/her"
   bio              : "Computational Scientist · Mechanics & Biology"
+  bio_fr           : "Simulation numérique · Mécanique & Biologie"
   location         : "Nice, France"
   employer         : "Université Côte d'Azur"
   uri              : # URL shown as "Website" in the sidebar
@@ -262,6 +264,17 @@ collections:
 
 # These settings control how pages and collections are included in the site
 defaults:
+  # Language: every page is English, except the French pages in _pages/fr
+  - scope:
+      path: ""
+    values:
+      lang: "en"
+      locale: "en-GB"
+  - scope:
+      path: "_pages/fr"
+    values:
+      lang: "fr"
+      locale: "fr"
   # _posts
   - scope:
       path: ""

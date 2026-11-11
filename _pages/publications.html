@@ -15,39 +15,4 @@ author_profile: true
   <a href="{{ site.author.orcid }}">ORCID</a>
 </div>
 
-<!-- Journal articles -->
-<h2>Journal articles</h2>
-{% assign journal_articles = site.publications | where: "type", "journal" %}
-{% assign published_articles = journal_articles | where_exp: "item", "item.status != 'under_review'" | reverse %}
-<hr class="hr-thick">
-{% for post in published_articles %}
-  {% include publication-item.html post=post %}
-  {% unless forloop.last %}
-    <hr class="hr-thin-gradient">
-  {% endunless %}
-{% endfor %}
-
-<!-- Under review -->
-{% assign under_review = journal_articles | where: "status", "under_review" | reverse %}
-{% unless under_review == empty %}
-  <!-- Under review -->
-  <h2>Under review</h2>
-  <hr class="hr-thick">
-  {% for post in under_review %}
-    {% include publication-item.html post=post %}
-    {% unless forloop.last %}
-      <hr class="hr-thin-gradient">
-    {% endunless %}
-  {% endfor %}
-{% endunless %}
-
-<!-- Conference proceedings -->
-<h2>Conference proceedings</h2>
-{% assign proceedings = site.publications | where: "type", "conference" %}
-<hr class="hr-thick">
-{% for post in proceedings %}
-  {% include publication-item.html post=post %}
-  {% unless forloop.last %}
-    <hr class="hr-thin-gradient">
-  {% endunless %}
-{% endfor %}
+{% include publication-list.html %}

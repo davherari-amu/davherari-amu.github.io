@@ -1,29 +1,47 @@
 {% include base_path %}
+{% include translation-urls.html %}
+{% assign t = site.data.i18n[page.lang] | default: site.data.i18n.en %}
+{% if page.lang == "fr" %}{% assign lang_prefix = "/fr" %}{% else %}{% assign lang_prefix = "" %}{% endif %}
+{% assign home_url = lang_prefix | append: "/" %}
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <button><span class="navicon"></span></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">Home</a>
+          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == home_url or page.url == '/index.html' %}selected{% endif %}">
+            <a href="{{ base_path }}{{ home_url }}">{{ t.home }}</a>
           </li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
+              {% assign link_url = link.url %}
             {% else %}
               {% assign domain = base_path %}
+              {% assign link_url = lang_prefix | append: link.url %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+            <li class="masthead__menu-item {% if page.url contains link_url and link.url != '/' %}selected{% endif %}">
+              <a href="{{ domain }}{{ link_url }}">{% if page.lang == "fr" and link.title_fr %}{{ link.title_fr }}{% else %}{{ link.title }}{% endif %}</a>
             </li>
           {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
-          </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
+      <!-- Language switch and light/dark theme, apart from the tabs on the right -->
+      <div class="masthead__tools">
+        <div class="lang-switch">
+          {% if page.lang == "fr" %}
+            <a href="{{ base_path }}{{ en_url }}" hreflang="en" lang="en" title="English version">EN</a>
+            <span class="lang-switch__sep" aria-hidden="true">|</span>
+            <span class="lang-switch__current" aria-current="true">FR</span>
+          {% else %}
+            <span class="lang-switch__current" aria-current="true">EN</span>
+            <span class="lang-switch__sep" aria-hidden="true">|</span>
+            <a href="{{ base_path }}{{ fr_url }}" hreflang="fr" lang="fr" title="Version française">FR</a>
+          {% endif %}
+        </div>
+        <a id="theme-toggle" role="button" tabindex="0" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+      </div>
     </div>
   </div>
 </div>

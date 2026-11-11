@@ -1,0 +1,10 @@
+{% comment %}Portfolio entries, shared by the English and French Portfolio pages.{% endcomment %}
+{% assign sorted_portfolio = site.portfolio | sort: "date" | reverse %}
+
+{% for post in sorted_portfolio %}
+  {% include portfolio-item.html %}
+  {% unless forloop.last %}
+    <hr class="hr-thick">
+  {% endunless %}
+{% endfor %}
+

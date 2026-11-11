@@ -5,4 +5,5 @@ publication: "_publications/her25.md"
 videos:
     - "/videos/portfolio/adapt_moment.mp4"
 description: "Reduction of stress concentration by shape adaptation inspired by synovial joint morphogenesis, for a periodic load."
+description_fr: "Réduction de la concentration de contraintes par une adaptation de forme inspirée de la morphogenèse des articulations synoviales, sous chargement périodique."
 ---

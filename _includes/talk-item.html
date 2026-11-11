@@ -14,10 +14,10 @@
   <!-- Meta -->
   <div class="talk-meta">
     <i class="fa fa-calendar" aria-hidden="true"></i>
-    {{ post.date | date: "%B %Y" }}
+    {% include month-year.html date=post.date %}
     &nbsp;|&nbsp;
     {{ post.host }},
-    {{ post.location }}
+    {% include place.html text=post.location %}
   </div>
 
 </div>

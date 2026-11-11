@@ -22,7 +22,12 @@
 
 <title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ site.title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
 
-{% assign seo_description = page.description | default: page.excerpt | default: site.description %}
+{% if page.lang == "fr" %}
+  {% assign site_description = site.description_fr %}
+{% else %}
+  {% assign site_description = site.description %}
+{% endif %}
+{% assign seo_description = page.description | default: page.excerpt | default: site_description %}
 {% if seo_description %}
   {% assign seo_description = seo_description | markdownify | strip_html | strip_newlines | escape_once %}
 {% endif %}
@@ -48,6 +53,13 @@
 
 {% if seo_url %}
   <link rel="canonical" href="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
+{% endif %}
+
+{% include translation-urls.html %}
+{% if has_translation %}
+  <link rel="alternate" hreflang="en" href="{{ en_url | prepend: seo_url }}">
+  <link rel="alternate" hreflang="fr" href="{{ fr_url | prepend: seo_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ en_url | prepend: seo_url }}">
 {% endif %}
 
 {% if site.twitter.username %}
@@ -119,7 +131,11 @@
 <!-- end SEO -->
 
 <!-- Open Graph protocol data (https://ogp.me/), used by social media -->
-<meta property="og:locale" content="{{ site.locale | default: "en" }}">
+{% if page.lang == "fr" %}
+  <meta property="og:locale" content="fr_FR">
+{% else %}
+  <meta property="og:locale" content="en_GB">
+{% endif %}
 <meta property="og:site_name" content="{{ site.title }}"> 
 <meta property="og:title" content="{{ seo_title | default: site.title }}">
 {% if page.date %}

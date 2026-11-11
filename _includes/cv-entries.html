@@ -1,0 +1,34 @@
+{% comment %}Experience, education and training entries from _cv/, shared by the English and French CV pages.{% endcomment %}
+{% assign t = site.data.i18n[page.lang] | default: site.data.i18n.en %}
+<!-- Experience -->
+<h2><i class="fa fa-briefcase"></i> {{ t.experience }}</h2>
+<hr class="hr-thick">
+{% assign experience = site.cv | where: "type", "experience" | sort: "order" | reverse %}
+{% for post in experience %}
+    {% include cv-item.html post=post %}
+    {% unless forloop.last %}
+        <hr class="hr-thin-gradient">
+    {% endunless %}
+{% endfor %}
+
+<!-- Education -->
+<h2><i class="fa fa-graduation-cap"></i> {{ t.education }}</h2>
+<hr class="hr-thick">
+{% assign education = site.cv | where: "type", "education" | sort: "date" | reverse %}
+{% for post in education %}
+    {% include cv-item.html post=post %}
+    {% unless forloop.last %}
+        <hr class="hr-thin-gradient">
+    {% endunless %}
+{% endfor %}
+
+<!-- Training -->
+<h2><i class="fa-solid fa-chalkboard-user"></i> {{ t.training }}</h2>
+<hr class="hr-thick">
+{% assign training = site.cv | where: "type", "training" | sort: "date" | reverse %}
+{% for post in training %}
+    {% include cv-item.html post=post %}
+    {% unless forloop.last %}
+        <hr class="hr-thin-gradient">
+    {% endunless %}
+{% endfor %}

@@ -1,0 +1,17 @@
+{% comment %}Courses grouped by institution, shared by the English and French Teaching pages.{% endcomment %}
+<!-- Get teaching institutions -->
+{% assign all_teaching = site.teaching | sort: "date-start" | reverse %}
+{% assign hosts = all_teaching | map: "host" | uniq %}
+
+<!-- Plot by institution -->
+{% for host in hosts %}
+  {% assign classes = all_teaching | where: "host", host %}
+  <h2>{{ host }}</h2>
+  <hr class="hr-thick">
+  {% for post in classes %}
+    {% include teaching-item.html post=post %}
+    {% unless forloop.last %}
+      <hr class="hr-thin-gradient">
+    {% endunless %}
+  {% endfor %}
+{% endfor %}

@@ -1,0 +1,1 @@
+{% comment %}Prints include.date as "Month Year" in the page's language: "July 2026" or "juillet 2026".{% endcomment %}{% if page.lang == "fr" %}{% assign month_index = include.date | date: "%-m" | minus: 1 %}{{ site.data.i18n.fr.months[month_index] }} {{ include.date | date: "%Y" }}{% else %}{{ include.date | date: "%B %Y" }}{% endif %}

@@ -1,19 +1,31 @@
+{% assign t = site.data.i18n[page.lang] | default: site.data.i18n.en %}
+{% if page.lang == "fr" %}
+    {% assign item_title = post.title_fr | default: post.title %}
+    {% assign item_host = post.host_fr | default: post.host %}
+    {% assign item_thesis = post.thesis_fr | default: post.thesis %}
+    {% assign item_details = post.details_fr | default: post.details %}
+{% else %}
+    {% assign item_title = post.title %}
+    {% assign item_host = post.host %}
+    {% assign item_thesis = post.thesis %}
+    {% assign item_details = post.details %}
+{% endif %}
 <div class="cv-item">
 
     <!-- Title -->
     <div class="cv-title">
-        <strong>{{ post.title }}</strong>
+        <strong>{{ item_title }}</strong>
     </div>
 
     <!-- Place -->
-    {% if post.host %}
+    {% if item_host %}
     <div class="cv-place">
         {% if post.type == "experience" %}
             <i class="fa fa-building-columns" aria-hidden="true"></i>
         {% else %}
             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
         {% endif %}
-        {{ post.host }}{% if post.location %}, {{ post.location }}{% endif %}
+        {{ item_host }}{% if post.location %}, {% include place.html text=post.location %}{% endif %}
     </div>
     {% endif %}
 
@@ -23,29 +35,29 @@
         {% if post.date and post.year_only %}
             {{ post.date | date: "%Y" }}
         {% elsif post.date %}
-            {{ post.date | date: "%B %Y" }}
+            {% include month-year.html date=post.date %}
         {% elsif post.date-start %}
-            {{ post.date-start | date: "%B %Y" }}
+            {% include month-year.html date=post.date-start %}
             –
             {% if post.date-end %}
-                {{ post.date-end | date: "%B %Y" }}
+                {% include month-year.html date=post.date-end %}
             {% else %}
-                present
+                {{ t.present }}
             {% endif %}
         {% endif %}
     </div>
 
     <!-- Thesis -->
-    {% if post.thesis %}
+    {% if item_thesis %}
     <div class="cv-thesis">
-        Thesis: <em>{{ post.thesis }}</em>
+        {{ t.thesis }} <em>{{ item_thesis }}</em>
     </div>
     {% endif %}
 
     <!-- Details -->
-    {% if post.details %}
+    {% if item_details %}
       <ul class="cv-details">
-        {% for item in post.details %}
+        {% for item in item_details %}
           <li>{{ item }}</li>
         {% endfor %}
       </ul>

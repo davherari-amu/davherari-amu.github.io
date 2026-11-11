@@ -1,22 +1,33 @@
+{% if page.lang == "fr" %}
+  {% assign item_title = post.title_fr | default: post.title %}
+  {% assign item_term = post.term_fr | default: post.term %}
+  {% assign item_position = post.position_fr | default: post.position %}
+  {% assign item_level = post.level_fr | default: post.level %}
+{% else %}
+  {% assign item_title = post.title %}
+  {% assign item_term = post.term %}
+  {% assign item_position = post.position %}
+  {% assign item_level = post.level %}
+{% endif %}
 <div class="teaching-item">
 
   <!-- Title -->
   <div class="teaching-title">
-    <strong>{{ post.title }}</strong>
+    <strong>{{ item_title }}</strong>
   </div>
 
   <!-- Date, position & hours -->
   <div class="teaching-meta">
     <i class="fa fa-calendar" aria-hidden="true"></i>
-    {% if post.term %}
-      {{ post.term }}
+    {% if item_term %}
+      {{ item_term }}
     {% else %}
-      {{ post.date-start | date: "%B %Y" }}
+      {% include month-year.html date=post.date-start %}
       –
-      {{ post.date-end | date: "%B %Y" }}
+      {% include month-year.html date=post.date-end %}
     {% endif %}
-    {% if post.position %}
-      | {{ post.position }}
+    {% if item_position %}
+      | {{ item_position }}
     {% endif %}
     {% if post.hours %}
       | {{ post.hours }} h
@@ -24,10 +35,10 @@
   </div>
 
   <!-- Level & department -->
-  {% if post.level or post.department %}
+  {% if item_level or post.department %}
   <div class="teaching-meta">
     <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-    {% if post.level %}{{ post.level }}{% if post.department %}, {% endif %}{% endif %}{{ post.department }}
+    {% if item_level %}{{ item_level }}{% if post.department %}, {% endif %}{% endif %}{{ post.department }}
   </div>
   {% endif %}
 </div>

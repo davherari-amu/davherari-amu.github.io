@@ -8,4 +8,7 @@ level: "L1 (first year of the bachelor's degree)"
 hours: 20
 location: "Nice, France"
 host: "Université Côte d'Azur"
+title_fr: "Statistiques"
+term_fr: "2026, semestre 2"
+level_fr: "L1 (première année de licence)"
 ---

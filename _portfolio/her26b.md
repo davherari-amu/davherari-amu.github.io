@@ -6,4 +6,5 @@ videos:
     - "/videos/portfolio/her26b_Movie_S1.mp4"
     - "/videos/portfolio/her26b_Movie_S3.mp4"
 description: "Random cell migration and migration through obstacles blocked by exhaustion of the surface."
+description_fr: "Migration cellulaire aléatoire, et migration entre des obstacles bloquée par l'épuisement de la surface membranaire."
 ---

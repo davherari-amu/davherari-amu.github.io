@@ -1,0 +1,23 @@
+{% comment %}Talk lists, shared by the English and French Talks pages.{% endcomment %}
+{% assign t = site.data.i18n[page.lang] | default: site.data.i18n.en %}
+<!-- Oral presentations -->
+{% assign oral_talks = site.talks | where: "type", "oral" | reverse %}
+<h2>{{ t.presentations }}</h2>
+<hr class="hr-thick">
+{% for post in oral_talks %}
+  {% include talk-item.html %}
+  {% unless forloop.last %}
+    <hr class="hr-thin-gradient">
+  {% endunless %}
+{% endfor %}
+
+<!-- Posters -->
+{% assign posters = site.talks | where: "type", "poster" | reverse %}
+<h2>{{ t.posters }}</h2>
+<hr class="hr-thick">
+{% for post in posters %}
+  {% include talk-item.html %}
+  {% unless forloop.last %}
+    <hr class="hr-thin-gradient">
+  {% endunless %}
+{% endfor %}

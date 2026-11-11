@@ -10,4 +10,8 @@ host: "Universidad Nacional de Colombia"
 details:
     - "Developed a custom finite element solver (Abaqus, Fortran) for reaction–diffusion systems modelling biological pattern formation."
     - "Linked simulations to analytical stability predictions to design and validate spatially heterogeneous parameter configurations."
+title_fr: "Assistant de recherche – Formation de motifs par réaction–diffusion"
+details_fr:
+    - "Développement d'un solveur éléments finis personnalisé (Abaqus, Fortran) pour des systèmes de réaction–diffusion modélisant la formation de motifs biologiques."
+    - "Mise en relation des simulations avec des prédictions analytiques de stabilité, pour concevoir et valider des configurations de paramètres spatialement hétérogènes."
 ---

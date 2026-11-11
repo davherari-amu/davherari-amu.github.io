@@ -1,0 +1,22 @@
+{% comment %}
+  Sets en_url and fr_url: the address of this page in each language.
+  French pages live under /fr/ with the same path as the English page
+  (/cv/ <-> /fr/cv/). When a page has no counterpart, the link goes to
+  that language's home page and has_translation is false.
+{% endcomment %}
+{% if page.lang == "fr" %}
+  {% assign fr_url = page.url %}
+  {% assign en_url = page.url | remove_first: "/fr" %}
+{% else %}
+  {% assign en_url = page.url %}
+  {% assign fr_url = page.url | prepend: "/fr" %}
+{% endif %}
+{% assign en_page = site.pages | where: "url", en_url | first %}
+{% assign fr_page = site.pages | where: "url", fr_url | first %}
+{% if en_page and fr_page %}
+  {% assign has_translation = true %}
+{% else %}
+  {% assign has_translation = false %}
+{% endif %}
+{% unless en_page %}{% assign en_url = "/" %}{% endunless %}
+{% unless fr_page %}{% assign fr_url = "/fr/" %}{% endunless %}
